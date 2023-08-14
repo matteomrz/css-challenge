@@ -5,35 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Figma Design</title>
     <link rel="stylesheet" href="challenge.css">
+
 </head>
 <body>
     <div id="layout">
     <div id="sidebar">
-        <img src="" alt="Logo">
-        <div class="sb-icon">
+        <div id="sidebar-content">
+            <img src="" alt="Logo" class="sb-icon">
+        <div class="sb-item"  onclick="current(this)" id="current">
             <i class="sb-icon"></i>
-            Dashboard
+            <span class="sb-name">Dashboard</span>
         </div>
-        <div class="sb-icon">
+        <div class="sb-item" onclick="current(this)">
             <i class="sb-icon"></i>
-            Customers    
+            <span class="sb-name">Customers</span>   
         </div>
-        <div class="sb-icon">
+        <div class="sb-item" onclick="current(this)">
             <i class="sb-icon"></i>
-            Settings
+            <span class="sb-name">Settings</span>
         </div>
+        </div>
+        <button id="collapse-button" onclick="collapse()">
+            <i id="collapse-icon"></i>
+            <span class="sb-name">Collapse</span>
+        </button>
     </div>
     <div id="dashboard">
-        <h1 class="header">Dashboard</h1>
-        <div id="dashboard-content">
-        <div class="row">
-            <div class="name">Example 1</div>
-            <div class="description">orem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia repellat quam excepturi repudiandae dolores quia possimus aliquam. Dolorum eligendi doloremque quae deserunt ratione animi libero. Eveniet et debitis libero ea!Lorem Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid aliquam reiciendis ipsum, sunt error ipsam magnam officiis praesentium nam quae debitis, delectus atque eveniet, non necessitatibus aspernatur nihil! Nesciunt, iure? Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia unde optio, error atque nisi autem. Beatae, dignissimos. Quo odit voluptatibus commodi iure alias facere expedita explicabo dolores illo. Similique, recusandae.</div>
-            
+        <div id="dashboard-header">
+        <div class="header">
+            <div>Dashboard</div>
+            <span>Projects: 42 | Customers: 10</span>
         </div>
+        <i id="user">user</i>
+        </div>
+        <div id="dashboard-content">
+            <div class="db-item">
+                <div class="name">Example 1</div>
+                <div class="description">orem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia repellat quam excepturi repudiandae dolores quia possimus aliquam. Dolorum eligendi doloremque quae deserunt ratione animi libero. Eveniet et debitis libero ea!Lorem Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid aliquam reiciendis ipsum, sunt error ipsam magnam officiis praesentium nam quae debitis, delectus atque eveniet, non necessitatibus aspernatur nihil! Nesciunt, iure? Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia unde optio, error atque nisi autem. Beatae, dignissimos. Quo odit voluptatibus commodi iure alias facere expedita explicabo dolores illo. Similique, recusandae.</div>
+                <div class="info">
+                    <div class="money"><i></i>123124,34€</div>
+                    <div class="client"><i></i>Client A</div>
+                </div>
+            </div><div class="db-item">
+                <div class="name">Example 1</div>
+                <div class="description">orem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia repellat quam excepturi repudiandae dolores quia possimus aliquam. Dolorum eligendi doloremque quae deserunt ratione animi libero. Eveniet et debitis libero ea!Lorem Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid aliquam reiciendis ipsum, sunt error ipsam magnam officiis praesentium nam quae debitis, delectus atque eveniet, non necessitatibus aspernatur nihil! Nesciunt, iure? Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia unde optio, error atque nisi autem. Beatae, dignissimos. Quo odit voluptatibus commodi iure alias facere expedita explicabo dolores illo. Similique, recusandae.</div>
+                <div class="info">
+                    <div class="money"><i></i>123124,34€</div>
+                    <div class="client"><i></i>Client A</div>
+                </div>
+            </div><div class="db-item">   
+                <div class="name">Example 1</div>
+                <div class="description">orem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia repellat quam excepturi repudiandae dolores quia possimus aliquam. Dolorum eligendi doloremque quae deserunt ratione animi libero. Eveniet et debitis libero ea!Lorem Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid aliquam reiciendis ipsum, sunt error ipsam magnam officiis praesentium nam quae debitis, delectus atque eveniet, non necessitatibus aspernatur nihil! Nesciunt, iure? Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia unde optio, error atque nisi autem. Beatae, dignissimos. Quo odit voluptatibus commodi iure alias facere expedita explicabo dolores illo. Similique, recusandae.</div>
+                <div class="info">
+                    <div class="money"><i></i>123124,34€</div>
+                    <div class="client"><i></i>Client A</div>
+                </div>
+            </div>
         
     </div>
     </div>
     </div>
+
+    <script>
+    function collapse() {
+        document.getElementById("layout").style.gridTemplateColumns = "50px auto";
+        var names = document.getElementsByClassName("sb-name");
+        var icons = document.getElementsByClassName("sb-icon");
+        for(var i = 0; i < names.length; i++) {
+            names[i].style.display = "none";
+            icons[i].style.display = "flex";
+            icons[i].style.justifyContent = "center";
+        }
+        document.getElementById("collapse-button").onclick = expand;
+    }
+    function expand() {
+        document.getElementById("layout").style.gridTemplateColumns = "250px auto";
+        var names = document.getElementsByClassName("sb-name");
+        var icons = document.getElementsByClassName("sb-icon");
+        for(var i = 0; i < names.length; i++) {
+            names[i].style.display = "inline-block";
+            icons[i].style.justifyContent = "left";
+        }
+        document.getElementById("collapse-button").onclick = collapse;
+    }
+    function current(sbElem) {
+        document.getElementById("current").removeAttribute("id");
+        sbElem.id = "current";
+    }
+    
+    </script>
 </body>
+
 </html>

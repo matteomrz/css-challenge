@@ -6,7 +6,7 @@ body {
 #layout {
     height: 100vh;
     display: grid;
-    grid-template-columns: 150px auto;
+    grid-template-columns: 250px auto;
     grid-auto-rows: auto;
 }
 
@@ -22,24 +22,58 @@ body {
     flex-wrap: wrap;
     justify-content: center;
 }
-#sidebar * {
-    margin: 10px;
-    border: 1px solid red;
+#sidebar {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    box-shadow: 4px 0px 8px rgba(85, 85, 85, 0.5);
 }
-.row {
+
+.sb-item {
+    margin: 10px;
+    color: black;
+    border: none;
+}
+#current {
+    color: blue;
+    border: 2px solid blue;
+    border-radius: 5px;
+}
+#collapse-button {
+    margin-top: auto;
+}
+.db-item {
     background-color: white;
     margin: 10px;
     padding: 12px 12px 30px;
     border-radius: 10px;
-    height: 200px;
-    width: 300px;
+    height: 150px;
+    width: 250px;
     flex: none;
     box-shadow: 0 4px 8px rgba(85, 85, 85, 0.5);
-    
+    display: flex;
+    flex-direction: column;
 }
-.row .description {
+.db-item .description {
     display: -webkit-box;
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+.db-item .info {
+    margin-top: auto;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.info * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#dashboard-header {
+    margin: 10px 20px;
+    display: grid;
+    grid-template-columns: auto 50px;
 }
