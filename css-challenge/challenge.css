@@ -97,6 +97,10 @@ body {
     border-radius: 35px;
 }
 
+ #small-screen-logo {
+    display: none;
+}
+
 /* Dashboard Content Layout */
 
 #dashboard-content {
@@ -165,4 +169,57 @@ body {
 
 .info * {
     display: flex;
+}
+
+/* Mobile Optimization */
+
+@media(max-width: 750px) {
+    #sidebar #collapse-button, #sb-logo, .sb-name {
+        display: none;
+    }
+    #layout {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    #sidebar-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    #dashboard {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    #dashboard-header {
+        position: sticky;
+        top: 10px;
+        flex-basis: 11%;
+    }
+    #dashboard-content {
+        margin: 0;
+        flex-basis:89%;
+    }
+    #user-wrapper {
+        padding: 10px;
+        margin: 10px;
+    }
+    #small-screen-logo {
+        display: inline;
+        height: 40px;
+        background-color: white;
+    }
+    #mobile-header {
+        display: flex;
+        align-items: center;
+    }
+    #mobile-header * {
+        margin-right: 10px;
+    }
+}
+
+@media(max-height: 700px) {
+    #dashboard-header {
+        flex-basis: 15%;
+    }
 }
