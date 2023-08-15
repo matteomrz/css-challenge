@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,287 +10,357 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
+
 <body>
     <div id="layout">
-    <div id="sidebar">
-        <div id="sidebar-content">
-            <img src="logo-placeholder.png" alt="Logo" id="sb-logo">
-        <div class="sb-item"  onclick="current(this)" id="current">
-            <i class="material-symbols-outlined sb-icon">home</i>
-            <span class="sb-name">Dashboard</span>
+        <div id="sidebar">
+            <div id="sidebar-content">
+                <img src="logo-placeholder.png" alt="Logo" id="sb-logo">
+                <div class="sb-item" onclick="current(this)" id="current">
+                    <i class="material-symbols-outlined sb-icon">home</i>
+                    <span class="sb-name">Dashboard</span>
+                </div>
+                <div class="sb-item" onclick="current(this)">
+                    <i class="material-symbols-outlined sb-icon">group</i>
+                    <span class="sb-name">Customers</span>
+                </div>
+                <div class="sb-item" onclick="current(this)">
+                    <i class="material-symbols-outlined sb-icon">build</i>
+                    <span class="sb-name">Settings</span>
+                </div>
+            </div>
+            <button id="collapse-button" class="sb-item" onclick="collapse()">
+                <i class="material-symbols-outlined sb-icon" id="close-icon">close</i>
+                <span class="sb-name">Collapse</span>
+            </button>
         </div>
-        <div class="sb-item" onclick="current(this)">
-            <i class="material-symbols-outlined sb-icon">group</i>
-            <span class="sb-name">Customers</span>   
+        <div id="dashboard">
+            <div id="dashboard-header">
+                <div id="header">
+                    <div id="mobile-header">
+                        <img src="logo-placeholder-close-up.png" id="small-screen-logo" alt="Logo">
+                        <span>Dashboard</span>
+                    </div>
+                    <span>Projects: 42 | Customers: 10</span>
+                </div>
+                <div id="user-wrapper">
+                    <i id="user" class="material-symbols-outlined">face</i>
+                </div>
+            </div>
+            <div id="dashboard-content">
+                <div class="db-item">
+                    <strong class="name">Yakidoo</strong>
+                    <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, labore
+                        maxime iusto necessitatibus explicabo iste, minus earum quo error reiciendis nobis vel. Neque
+                        recusandae soluta non ipsa inventore officia iure! Lorem ipsum, dolor sit amet consectetur
+                        adipisicing elit. Ad in excepturi repudiandae perspiciatis quia deleniti magni, itaque incidunt
+                        vitae labore veritatis veniam dolores esse. Dicta unde ea vel rerum veniam.</div>
+                    <div class="info">
+                        <div class="money">
+                            <i class="material-symbols-outlined">payments</i>
+                            <span>123124,34€</span>
+                        </div>
+                        <div class="client">
+                            <i class="material-symbols-outlined">person</i>
+                            <span>Client A</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="db-item">
+                    <strong class="name">Marilabida</strong>
+                    <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, labore
+                        maxime iusto necessitatibus explicabo iste, minus earum quo error reiciendis nobis vel. Neque
+                        recusandae soluta non ipsa inventore officia iure! Lorem ipsum, dolor sit amet consectetur
+                        adipisicing elit. Ad in excepturi repudiandae perspiciatis quia deleniti magni, itaque incidunt
+                        vitae labore veritatis veniam dolores esse. Dicta unde ea vel rerum veniam.</div>
+                    <div class="info">
+                        <div class="money">
+                            <i class="material-symbols-outlined">payments</i>
+                            <span>24,21€</span>
+                        </div>
+                        <div class="client">
+                            <i class="material-symbols-outlined">person</i>
+                            <span>Carsten</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="db-item">
+                    <strong class="name">Hanimanima</strong>
+                    <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, labore
+                        maxime iusto necessitatibus explicabo iste, minus earum quo error reiciendis nobis vel. Neque
+                        recusandae soluta non ipsa inventore officia iure! Lorem ipsum, dolor sit amet consectetur
+                        adipisicing elit. Ad in excepturi repudiandae perspiciatis quia deleniti magni, itaque incidunt
+                        vitae labore veritatis veniam dolores esse. Dicta unde ea vel rerum veniam.</div>
+                    <div class="info">
+                        <div class="money">
+                            <i class="material-symbols-outlined">payments</i>
+                            <span>234135,34€</span>
+                        </div>
+                        <div class="client">
+                            <i class="material-symbols-outlined">person</i>
+                            <span>Dieter Inc.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="db-item">
+                    <strong class="name">Waliwala</strong>
+                    <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, labore
+                        maxime iusto necessitatibus explicabo iste, minus earum quo error reiciendis nobis vel. Neque
+                        recusandae soluta non ipsa inventore officia iure! Lorem ipsum, dolor sit amet consectetur
+                        adipisicing elit. Ad in excepturi repudiandae perspiciatis quia deleniti magni, itaque incidunt
+                        vitae labore veritatis veniam dolores esse. Dicta unde ea vel rerum veniam.</div>
+                    <div class="info">
+                        <div class="money">
+                            <i class="material-symbols-outlined">payments</i>
+                            <span>123124,34€</span>
+                        </div>
+                        <div class="client">
+                            <i class="material-symbols-outlined">person</i>
+                            <span>Microsoft</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="db-item">
+                    <strong class="name">Roomano</strong>
+                    <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, labore
+                        maxime iusto necessitatibus explicabo iste, minus earum quo error reiciendis nobis vel. Neque
+                        recusandae soluta non ipsa inventore officia iure! Lorem ipsum, dolor sit amet consectetur
+                        adipisicing elit. Ad in excepturi repudiandae perspiciatis quia deleniti magni, itaque incidunt
+                        vitae labore veritatis veniam dolores esse. Dicta unde ea vel rerum veniam.</div>
+                    <div class="info">
+                        <div class="money">
+                            <i class="material-symbols-outlined">payments</i>
+                            <span>187124,34€</span>
+                        </div>
+                        <div class="client">
+                            <i class="material-symbols-outlined">person</i>
+                            <span>Gerd</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="db-item">
+                    <strong class="name">Abble</strong>
+                    <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, labore
+                        maxime iusto necessitatibus explicabo iste, minus earum quo error reiciendis nobis vel. Neque
+                        recusandae soluta non ipsa inventore officia iure! Lorem ipsum, dolor sit amet consectetur
+                        adipisicing elit. Ad in excepturi repudiandae perspiciatis quia deleniti magni, itaque incidunt
+                        vitae labore veritatis veniam dolores esse. Dicta unde ea vel rerum veniam.</div>
+                    <div class="info">
+                        <div class="money">
+                            <i class="material-symbols-outlined">payments</i>
+                            <span>18094,34€</span>
+                        </div>
+                        <div class="client">
+                            <i class="material-symbols-outlined">person</i>
+                            <span>Steve Obst</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="db-item">
+                    <strong class="name">Barberia</strong>
+                    <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, labore
+                        maxime iusto necessitatibus explicabo iste, minus earum quo error reiciendis nobis vel. Neque
+                        recusandae soluta non ipsa inventore officia iure! Lorem ipsum, dolor sit amet consectetur
+                        adipisicing elit. Ad in excepturi repudiandae perspiciatis quia deleniti magni, itaque incidunt
+                        vitae labore veritatis veniam dolores esse. Dicta unde ea vel rerum veniam.</div>
+                    <div class="info">
+                        <div class="money">
+                            <i class="material-symbols-outlined">payments</i>
+                            <span>234924,34€</span>
+                        </div>
+                        <div class="client">
+                            <i class="material-symbols-outlined">person</i>
+                            <span>Supersell</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="db-item">
+                    <strong class="name">Braliwali</strong>
+                    <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, labore
+                        maxime iusto necessitatibus explicabo iste, minus earum quo error reiciendis nobis vel. Neque
+                        recusandae soluta non ipsa inventore officia iure! Lorem ipsum, dolor sit amet consectetur
+                        adipisicing elit. Ad in excepturi repudiandae perspiciatis quia deleniti magni, itaque incidunt
+                        vitae labore veritatis veniam dolores esse. Dicta unde ea vel rerum veniam.</div>
+                    <div class="info">
+                        <div class="money">
+                            <i class="material-symbols-outlined">payments</i>
+                            <span>1984324,34€</span>
+                        </div>
+                        <div class="client">
+                            <i class="material-symbols-outlined">person</i>
+                            <span>Mortisia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="db-item">
+                    <strong class="name">Adelhalzener</strong>
+                    <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, labore
+                        maxime iusto necessitatibus explicabo iste, minus earum quo error reiciendis nobis vel. Neque
+                        recusandae soluta non ipsa inventore officia iure! Lorem ipsum, dolor sit amet consectetur
+                        adipisicing elit. Ad in excepturi repudiandae perspiciatis quia deleniti magni, itaque incidunt
+                        vitae labore veritatis veniam dolores esse. Dicta unde ea vel rerum veniam.</div>
+                    <div class="info">
+                        <div class="money">
+                            <i class="material-symbols-outlined">payments</i>
+                            <span>1298234,34€</span>
+                        </div>
+                        <div class="client">
+                            <i class="material-symbols-outlined">person</i>
+                            <span>Naturia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="db-item">
+                    <strong class="name">Holimanisa</strong>
+                    <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, labore
+                        maxime iusto necessitatibus explicabo iste, minus earum quo error reiciendis nobis vel. Neque
+                        recusandae soluta non ipsa inventore officia iure! Lorem ipsum, dolor sit amet consectetur
+                        adipisicing elit. Ad in excepturi repudiandae perspiciatis quia deleniti magni, itaque incidunt
+                        vitae labore veritatis veniam dolores esse. Dicta unde ea vel rerum veniam.</div>
+                    <div class="info">
+                        <div class="money">
+                            <i class="material-symbols-outlined">payments</i>
+                            <span>1298234,34€</span>
+                        </div>
+                        <div class="client">
+                            <i class="material-symbols-outlined">person</i>
+                            <span>Naturia</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="db-item">
+                    <strong class="name">Grabinera</strong>
+                    <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, labore
+                        maxime iusto necessitatibus explicabo iste, minus earum quo error reiciendis nobis vel. Neque
+                        recusandae soluta non ipsa inventore officia iure! Lorem ipsum, dolor sit amet consectetur
+                        adipisicing elit. Ad in excepturi repudiandae perspiciatis quia deleniti magni, itaque incidunt
+                        vitae labore veritatis veniam dolores esse. Dicta unde ea vel rerum veniam.</div>
+                    <div class="info">
+                        <div class="money">
+                            <i class="material-symbols-outlined">payments</i>
+                            <span>1298234,34€</span>
+                        </div>
+                        <div class="client">
+                            <i class="material-symbols-outlined">person</i>
+                            <span>Naturia</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="db-item">
+                    <strong class="name">Langbart</strong>
+                    <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, labore
+                        maxime iusto necessitatibus explicabo iste, minus earum quo error reiciendis nobis vel. Neque
+                        recusandae soluta non ipsa inventore officia iure! Lorem ipsum, dolor sit amet consectetur
+                        adipisicing elit. Ad in excepturi repudiandae perspiciatis quia deleniti magni, itaque incidunt
+                        vitae labore veritatis veniam dolores esse. Dicta unde ea vel rerum veniam.</div>
+                    <div class="info">
+                        <div class="money">
+                            <i class="material-symbols-outlined">payments</i>
+                            <span>1298234,34€</span>
+                        </div>
+                        <div class="client">
+                            <i class="material-symbols-outlined">person</i>
+                            <span>Naturia</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="db-item">
+                    <strong class="name">Hageli</strong>
+                    <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, labore
+                        maxime iusto necessitatibus explicabo iste, minus earum quo error reiciendis nobis vel. Neque
+                        recusandae soluta non ipsa inventore officia iure! Lorem ipsum, dolor sit amet consectetur
+                        adipisicing elit. Ad in excepturi repudiandae perspiciatis quia deleniti magni, itaque incidunt
+                        vitae labore veritatis veniam dolores esse. Dicta unde ea vel rerum veniam.</div>
+                    <div class="info">
+                        <div class="money">
+                            <i class="material-symbols-outlined">payments</i>
+                            <span>1298234,34€</span>
+                        </div>
+                        <div class="client">
+                            <i class="material-symbols-outlined">person</i>
+                            <span>Naturia</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="db-item">
+                    <strong class="name">Eramilast</strong>
+                    <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, labore
+                        maxime iusto necessitatibus explicabo iste, minus earum quo error reiciendis nobis vel. Neque
+                        recusandae soluta non ipsa inventore officia iure! Lorem ipsum, dolor sit amet consectetur
+                        adipisicing elit. Ad in excepturi repudiandae perspiciatis quia deleniti magni, itaque incidunt
+                        vitae labore veritatis veniam dolores esse. Dicta unde ea vel rerum veniam.</div>
+                    <div class="info">
+                        <div class="money">
+                            <i class="material-symbols-outlined">payments</i>
+                            <span>1298234,34€</span>
+                        </div>
+                        <div class="client">
+                            <i class="material-symbols-outlined">person</i>
+                            <span>Naturia</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="db-item">
+                    <strong class="name">Wasard</strong>
+                    <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, labore
+                        maxime iusto necessitatibus explicabo iste, minus earum quo error reiciendis nobis vel. Neque
+                        recusandae soluta non ipsa inventore officia iure! Lorem ipsum, dolor sit amet consectetur
+                        adipisicing elit. Ad in excepturi repudiandae perspiciatis quia deleniti magni, itaque incidunt
+                        vitae labore veritatis veniam dolores esse. Dicta unde ea vel rerum veniam.</div>
+                    <div class="info">
+                        <div class="money">
+                            <i class="material-symbols-outlined">payments</i>
+                            <span>1298234,34€</span>
+                        </div>
+                        <div class="client">
+                            <i class="material-symbols-outlined">person</i>
+                            <span>Naturia</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="db-item">
+                    <strong class="name">Quasir</strong>
+                    <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, labore
+                        maxime iusto necessitatibus explicabo iste, minus earum quo error reiciendis nobis vel. Neque
+                        recusandae soluta non ipsa inventore officia iure! Lorem ipsum, dolor sit amet consectetur
+                        adipisicing elit. Ad in excepturi repudiandae perspiciatis quia deleniti magni, itaque incidunt
+                        vitae labore veritatis veniam dolores esse. Dicta unde ea vel rerum veniam.</div>
+                    <div class="info">
+                        <div class="money">
+                            <i class="material-symbols-outlined">payments</i>
+                            <span>1298234,34€</span>
+                        </div>
+                        <div class="client">
+                            <i class="material-symbols-outlined">person</i>
+                            <span>Naturia</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
-        <div class="sb-item" onclick="current(this)">
-            <i class="material-symbols-outlined sb-icon">build</i>
-            <span class="sb-name">Settings</span>
-        </div>
-        </div>
-        <button id="collapse-button" class="sb-item" onclick="collapse()">
-            <i class="material-symbols-outlined sb-icon" id="close-icon">close</i>
-            <span class="sb-name">Collapse</span>
-        </button>
-    </div>
-    <div id="dashboard">
-        <div id="dashboard-header">
-        <div id="header">
-            <div id="mobile-header">
-                <img src="logo-placeholder-close-up.png" id="small-screen-logo" alt="Logo">
-                <span>Dashboard</span>
-            </div>
-            <span>Projects: 42 | Customers: 10</span>
-        </div>
-        <div id="user-wrapper">
-        <i id="user" class="material-symbols-outlined">face</i>
-        </div>
-        </div>
-        <div id="dashboard-content">
-            <div class="db-item">   
-                <strong class="name">Yakidoo</strong>
-                <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, labore maxime iusto necessitatibus explicabo iste, minus earum quo error reiciendis nobis vel. Neque recusandae soluta non ipsa inventore officia iure! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad in excepturi repudiandae perspiciatis quia deleniti magni, itaque incidunt vitae labore veritatis veniam dolores esse. Dicta unde ea vel rerum veniam.</div>
-                <div class="info">
-                    <div class="money">
-                        <i class="material-symbols-outlined">payments</i>
-                        <span>123124,34€</span>
-                    </div>
-                    <div class="client">
-                        <i class="material-symbols-outlined">person</i>
-                        <span>Client A</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="db-item">   
-                <strong class="name">Marilabida</strong>
-                <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, labore maxime iusto necessitatibus explicabo iste, minus earum quo error reiciendis nobis vel. Neque recusandae soluta non ipsa inventore officia iure! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad in excepturi repudiandae perspiciatis quia deleniti magni, itaque incidunt vitae labore veritatis veniam dolores esse. Dicta unde ea vel rerum veniam.</div>
-                <div class="info">
-                    <div class="money">
-                        <i class="material-symbols-outlined">payments</i>
-                        <span>24,21€</span>
-                    </div>
-                    <div class="client">
-                        <i class="material-symbols-outlined">person</i>
-                        <span>Carsten</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="db-item">   
-                <strong class="name">Hanimanima</strong>
-                <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, labore maxime iusto necessitatibus explicabo iste, minus earum quo error reiciendis nobis vel. Neque recusandae soluta non ipsa inventore officia iure! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad in excepturi repudiandae perspiciatis quia deleniti magni, itaque incidunt vitae labore veritatis veniam dolores esse. Dicta unde ea vel rerum veniam.</div>
-                <div class="info">
-                    <div class="money">
-                        <i class="material-symbols-outlined">payments</i>
-                        <span>234135,34€</span>
-                    </div>
-                    <div class="client">
-                        <i class="material-symbols-outlined">person</i>
-                        <span>Dieter Inc.</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="db-item">   
-                <strong class="name">Waliwala</strong>
-                <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, labore maxime iusto necessitatibus explicabo iste, minus earum quo error reiciendis nobis vel. Neque recusandae soluta non ipsa inventore officia iure! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad in excepturi repudiandae perspiciatis quia deleniti magni, itaque incidunt vitae labore veritatis veniam dolores esse. Dicta unde ea vel rerum veniam.</div>
-                <div class="info">
-                    <div class="money">
-                        <i class="material-symbols-outlined">payments</i>
-                        <span>123124,34€</span>
-                    </div>
-                    <div class="client">
-                        <i class="material-symbols-outlined">person</i>
-                        <span>Microsoft</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="db-item">   
-                <strong class="name">Roomano</strong>
-                <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, labore maxime iusto necessitatibus explicabo iste, minus earum quo error reiciendis nobis vel. Neque recusandae soluta non ipsa inventore officia iure! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad in excepturi repudiandae perspiciatis quia deleniti magni, itaque incidunt vitae labore veritatis veniam dolores esse. Dicta unde ea vel rerum veniam.</div>
-                <div class="info">
-                    <div class="money">
-                        <i class="material-symbols-outlined">payments</i>
-                        <span>187124,34€</span>
-                    </div>
-                    <div class="client">
-                        <i class="material-symbols-outlined">person</i>
-                        <span>Gerd</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="db-item">   
-                <strong class="name">Abble</strong>
-                <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, labore maxime iusto necessitatibus explicabo iste, minus earum quo error reiciendis nobis vel. Neque recusandae soluta non ipsa inventore officia iure! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad in excepturi repudiandae perspiciatis quia deleniti magni, itaque incidunt vitae labore veritatis veniam dolores esse. Dicta unde ea vel rerum veniam.</div>
-                <div class="info">
-                    <div class="money">
-                        <i class="material-symbols-outlined">payments</i>
-                        <span>18094,34€</span>
-                    </div>
-                    <div class="client">
-                        <i class="material-symbols-outlined">person</i>
-                        <span>Steve Obst</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="db-item">   
-                <strong class="name">Barberia</strong>
-                <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, labore maxime iusto necessitatibus explicabo iste, minus earum quo error reiciendis nobis vel. Neque recusandae soluta non ipsa inventore officia iure! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad in excepturi repudiandae perspiciatis quia deleniti magni, itaque incidunt vitae labore veritatis veniam dolores esse. Dicta unde ea vel rerum veniam.</div>
-                <div class="info">
-                    <div class="money">
-                        <i class="material-symbols-outlined">payments</i>
-                        <span>234924,34€</span>
-                    </div>
-                    <div class="client">
-                        <i class="material-symbols-outlined">person</i>
-                        <span>Supersell</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="db-item">   
-                <strong class="name">Braliwali</strong>
-                <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, labore maxime iusto necessitatibus explicabo iste, minus earum quo error reiciendis nobis vel. Neque recusandae soluta non ipsa inventore officia iure! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad in excepturi repudiandae perspiciatis quia deleniti magni, itaque incidunt vitae labore veritatis veniam dolores esse. Dicta unde ea vel rerum veniam.</div>
-                <div class="info">
-                    <div class="money">
-                        <i class="material-symbols-outlined">payments</i>
-                        <span>1984324,34€</span>
-                    </div>
-                    <div class="client">
-                        <i class="material-symbols-outlined">person</i>
-                        <span>Mortisia</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="db-item">   
-                <strong class="name">Adelhalzener</strong>
-                <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, labore maxime iusto necessitatibus explicabo iste, minus earum quo error reiciendis nobis vel. Neque recusandae soluta non ipsa inventore officia iure! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad in excepturi repudiandae perspiciatis quia deleniti magni, itaque incidunt vitae labore veritatis veniam dolores esse. Dicta unde ea vel rerum veniam.</div>
-                <div class="info">
-                    <div class="money">
-                        <i class="material-symbols-outlined">payments</i>
-                        <span>1298234,34€</span>
-                    </div>
-                    <div class="client">
-                        <i class="material-symbols-outlined">person</i>
-                        <span>Naturia</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="db-item">   
-                <strong class="name">Holimanisa</strong>
-                <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, labore maxime iusto necessitatibus explicabo iste, minus earum quo error reiciendis nobis vel. Neque recusandae soluta non ipsa inventore officia iure! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad in excepturi repudiandae perspiciatis quia deleniti magni, itaque incidunt vitae labore veritatis veniam dolores esse. Dicta unde ea vel rerum veniam.</div>
-                <div class="info">
-                    <div class="money">
-                        <i class="material-symbols-outlined">payments</i>
-                        <span>1298234,34€</span>
-                    </div>
-                    <div class="client">
-                        <i class="material-symbols-outlined">person</i>
-                        <span>Naturia</span>
-                    </div>
-                </div>
-            </div><div class="db-item">   
-                <strong class="name">Grabinera</strong>
-                <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, labore maxime iusto necessitatibus explicabo iste, minus earum quo error reiciendis nobis vel. Neque recusandae soluta non ipsa inventore officia iure! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad in excepturi repudiandae perspiciatis quia deleniti magni, itaque incidunt vitae labore veritatis veniam dolores esse. Dicta unde ea vel rerum veniam.</div>
-                <div class="info">
-                    <div class="money">
-                        <i class="material-symbols-outlined">payments</i>
-                        <span>1298234,34€</span>
-                    </div>
-                    <div class="client">
-                        <i class="material-symbols-outlined">person</i>
-                        <span>Naturia</span>
-                    </div>
-                </div>
-            </div><div class="db-item">   
-                <strong class="name">Langbart</strong>
-                <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, labore maxime iusto necessitatibus explicabo iste, minus earum quo error reiciendis nobis vel. Neque recusandae soluta non ipsa inventore officia iure! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad in excepturi repudiandae perspiciatis quia deleniti magni, itaque incidunt vitae labore veritatis veniam dolores esse. Dicta unde ea vel rerum veniam.</div>
-                <div class="info">
-                    <div class="money">
-                        <i class="material-symbols-outlined">payments</i>
-                        <span>1298234,34€</span>
-                    </div>
-                    <div class="client">
-                        <i class="material-symbols-outlined">person</i>
-                        <span>Naturia</span>
-                    </div>
-                </div>
-            </div><div class="db-item">   
-                <strong class="name">Hageli</strong>
-                <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, labore maxime iusto necessitatibus explicabo iste, minus earum quo error reiciendis nobis vel. Neque recusandae soluta non ipsa inventore officia iure! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad in excepturi repudiandae perspiciatis quia deleniti magni, itaque incidunt vitae labore veritatis veniam dolores esse. Dicta unde ea vel rerum veniam.</div>
-                <div class="info">
-                    <div class="money">
-                        <i class="material-symbols-outlined">payments</i>
-                        <span>1298234,34€</span>
-                    </div>
-                    <div class="client">
-                        <i class="material-symbols-outlined">person</i>
-                        <span>Naturia</span>
-                    </div>
-                </div>
-            </div><div class="db-item">   
-                <strong class="name">Eramilast</strong>
-                <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, labore maxime iusto necessitatibus explicabo iste, minus earum quo error reiciendis nobis vel. Neque recusandae soluta non ipsa inventore officia iure! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad in excepturi repudiandae perspiciatis quia deleniti magni, itaque incidunt vitae labore veritatis veniam dolores esse. Dicta unde ea vel rerum veniam.</div>
-                <div class="info">
-                    <div class="money">
-                        <i class="material-symbols-outlined">payments</i>
-                        <span>1298234,34€</span>
-                    </div>
-                    <div class="client">
-                        <i class="material-symbols-outlined">person</i>
-                        <span>Naturia</span>
-                    </div>
-                </div>
-            </div><div class="db-item">   
-                <strong class="name">Wasard</strong>
-                <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, labore maxime iusto necessitatibus explicabo iste, minus earum quo error reiciendis nobis vel. Neque recusandae soluta non ipsa inventore officia iure! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad in excepturi repudiandae perspiciatis quia deleniti magni, itaque incidunt vitae labore veritatis veniam dolores esse. Dicta unde ea vel rerum veniam.</div>
-                <div class="info">
-                    <div class="money">
-                        <i class="material-symbols-outlined">payments</i>
-                        <span>1298234,34€</span>
-                    </div>
-                    <div class="client">
-                        <i class="material-symbols-outlined">person</i>
-                        <span>Naturia</span>
-                    </div>
-                </div>
-            </div><div class="db-item">   
-                <strong class="name">Quasir</strong>
-                <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, labore maxime iusto necessitatibus explicabo iste, minus earum quo error reiciendis nobis vel. Neque recusandae soluta non ipsa inventore officia iure! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad in excepturi repudiandae perspiciatis quia deleniti magni, itaque incidunt vitae labore veritatis veniam dolores esse. Dicta unde ea vel rerum veniam.</div>
-                <div class="info">
-                    <div class="money">
-                        <i class="material-symbols-outlined">payments</i>
-                        <span>1298234,34€</span>
-                    </div>
-                    <div class="client">
-                        <i class="material-symbols-outlined">person</i>
-                        <span>Naturia</span>
-                    </div>
-                </div>
-            </div>
-        
-    </div>
-    </div>
     </div>
 
     <script>
         function collapse() {
             document.getElementById("layout").style.gridTemplateColumns = "50px auto";
             var names = document.getElementsByClassName("sb-name");
-            var icons = document.getElementsByClassName("sb-icon");
-            for(var i = 0; i < names.length; i++) {
+            for (var i = 0; i < names.length; i++) {
                 names[i].style.display = "none";
-                icons[i].style.display = "flex";
-                icons[i].style.justifyContent = "center";
             }
             document.getElementById("collapse-button").onclick = expand;
             document.getElementById("close-icon").innerHTML = "open_in_full";
@@ -298,10 +369,8 @@
         function expand() {
             document.getElementById("layout").style.gridTemplateColumns = "250px auto";
             var names = document.getElementsByClassName("sb-name");
-            var icons = document.getElementsByClassName("sb-icon");
-            for(var i = 0; i < names.length; i++) {
+            for (var i = 0; i < names.length; i++) {
                 names[i].style.display = "inline-block";
-                icons[i].style.justifyContent = "left";
             }
             document.getElementById("collapse-button").onclick = collapse;
             document.getElementById("close-icon").innerHTML = "close";
@@ -311,8 +380,8 @@
             document.getElementById("current").removeAttribute("id");
             sbElem.id = "current";
         }
-        
-        </script>
+
+    </script>
 </body>
 
 </html>
