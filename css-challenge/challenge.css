@@ -239,3 +239,9 @@ body {
         flex-basis: 15%;
     }
 }
+
+@media(max-width: 850px) {
+    #dashboard-content {
+        margin: 0 40px;
+    }
+}
