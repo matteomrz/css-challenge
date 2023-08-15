@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Figma Design</title>
+    <title>Dashboard</title>
+    <link rel="icon" href="favicon-dashboard.ico" type="image/x-icon">
     <link rel="stylesheet" href="challenge.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -281,37 +282,37 @@
     </div>
 
     <script>
-    function collapse() {
-        document.getElementById("layout").style.gridTemplateColumns = "50px auto";
-        var names = document.getElementsByClassName("sb-name");
-        var icons = document.getElementsByClassName("sb-icon");
-        for(var i = 0; i < names.length; i++) {
-            names[i].style.display = "none";
-            icons[i].style.display = "flex";
-            icons[i].style.justifyContent = "center";
+        function collapse() {
+            document.getElementById("layout").style.gridTemplateColumns = "50px auto";
+            var names = document.getElementsByClassName("sb-name");
+            var icons = document.getElementsByClassName("sb-icon");
+            for(var i = 0; i < names.length; i++) {
+                names[i].style.display = "none";
+                icons[i].style.display = "flex";
+                icons[i].style.justifyContent = "center";
+            }
+            document.getElementById("collapse-button").onclick = expand;
+            document.getElementById("close-icon").innerHTML = "open_in_full";
+            document.getElementById("sb-logo").setAttribute("src", "logo-placeholder-close-up.png")
         }
-        document.getElementById("collapse-button").onclick = expand;
-        document.getElementById("close-icon").innerHTML = "open_in_full";
-        document.getElementById("sb-logo").setAttribute("src", "logo-placeholder-close-up.png")
-    }
-    function expand() {
-        document.getElementById("layout").style.gridTemplateColumns = "250px auto";
-        var names = document.getElementsByClassName("sb-name");
-        var icons = document.getElementsByClassName("sb-icon");
-        for(var i = 0; i < names.length; i++) {
-            names[i].style.display = "inline-block";
-            icons[i].style.justifyContent = "left";
+        function expand() {
+            document.getElementById("layout").style.gridTemplateColumns = "250px auto";
+            var names = document.getElementsByClassName("sb-name");
+            var icons = document.getElementsByClassName("sb-icon");
+            for(var i = 0; i < names.length; i++) {
+                names[i].style.display = "inline-block";
+                icons[i].style.justifyContent = "left";
+            }
+            document.getElementById("collapse-button").onclick = collapse;
+            document.getElementById("close-icon").innerHTML = "close";
+            document.getElementById("sb-logo").setAttribute("src", "logo-placeholder.png")
         }
-        document.getElementById("collapse-button").onclick = collapse;
-        document.getElementById("close-icon").innerHTML = "close";
-        document.getElementById("sb-logo").setAttribute("src", "logo-placeholder.png")
-    }
-    function current(sbElem) {
-        document.getElementById("current").removeAttribute("id");
-        sbElem.id = "current";
-    }
-    
-    </script>
+        function current(sbElem) {
+            document.getElementById("current").removeAttribute("id");
+            sbElem.id = "current";
+        }
+        
+        </script>
 </body>
 
 </html>
